@@ -1,0 +1,10 @@
+{
+  "name": "computer-graphics",
+  "version": "0.1.0",
+  "description": "Computer graphics project",
+  "main": "build/index.js",
+  "repository": "git@github.com:dawiddominiak/computer-graphics.git",
+  "author": "Dawid Dominiak",
+  "license": "MIT",
+  "private": false
+}
