@@ -31,6 +31,11 @@ export class Point {
     this.pointMatrix = MatrixTransformationService.applyMatrixTransformation(tiltMatrics, this.pointMatrix);
   }
 
+  public changeZoom(factor: number): void {
+    const zoomMatrix = MatrixTransformationService.createZoomMatrix(factor);
+    this.pointMatrix = MatrixTransformationService.applyMatrixTransformation(zoomMatrix, this.pointMatrix);
+  }
+
   public changePerspective(factor: number): void {
     const perspectiveMatrix = MatrixTransformationService.createPerspectiveMatrix(factor);
     this.pointMatrix = MatrixTransformationService.applyMatrixTransformation(perspectiveMatrix, this.pointMatrix);
@@ -46,5 +51,17 @@ export class Point {
 
   public z(): number {
     return this.pointMatrix[2];
+  }
+
+  public normalizedX(): number {
+    return this.pointMatrix[0]/this.pointMatrix[3];
+  }
+
+  public normalizedY(): number {
+    return this.pointMatrix[1]/this.pointMatrix[3];
+  }
+
+  public normalizedZ(): number {
+    return this.pointMatrix[2]/this.pointMatrix[3];
   }
 }

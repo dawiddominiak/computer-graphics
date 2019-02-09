@@ -21,6 +21,12 @@ export abstract class Figure {
     }
   }
 
+  public changeZoom(factor: number): void {
+    for (let point of this.points) {
+      point.changeZoom(factor);
+    }
+  }
+
   public getPointsInDrawOrder(): Point[] {
     return this.getDrawOrder()
       .map((index) => this.points[index]);

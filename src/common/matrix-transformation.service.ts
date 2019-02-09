@@ -43,9 +43,18 @@ export class MatrixTransformationService {
     return [
       [1, 0, 0, 0],
       [0, 1, 0, 0],
-      [0, 0, perspectiveFactor, 0],
-      [0, 0, 0, 1]
+      [0, 0, 1, 0],
+      [0, 0, perspectiveFactor, 0]
     ];
+  }
+
+  public static createZoomMatrix(zoomFactor: number): number[][] {
+    return [
+      [zoomFactor, 0, 0, 0],
+      [0, zoomFactor, 0, 0],
+      [0, 0, zoomFactor, 0],
+      [0, 0, 0, 1]
+    ]
   }
 
   public static applyMatrixTransformation(

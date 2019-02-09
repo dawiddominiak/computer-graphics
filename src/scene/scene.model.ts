@@ -52,4 +52,10 @@ export class Scene {
       (figure) => figure.changePerspective(factor)
     )
   }
+
+  public changeZoom(factor: number) {
+    this.figures.forEach(
+      (figure) => figure.changeZoom(factor)
+    )
+  }
 }
